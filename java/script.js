@@ -27,13 +27,13 @@ const typeEffect = () => {
 typeEffect(); // Kaller skrive effekten
 
 
-let red = false; // Boolean/Vilkår som sier om darkmode er på(true) eller av(false)
+let dark_mode = false; // Boolean/Vilkår som sier om darkmode er på(true) eller av(false)
 
 function darkMode () {
     document.body.classList.toggle("dark-mode");
     document.getElementById("text").classList.toggle("red");
 
-    if (red == true) {
+    if (dark_mode == true) {
         document.getElementById("progress").style.background = "conic-gradient(#31c6f7 var(--p),lightgrey 0)";
         document.getElementById("progress1").style.background = "conic-gradient(#31c6f7 var(--p),lightgrey 0)";
         document.getElementById("progress2").style.background = "conic-gradient(#31c6f7 var(--p),lightgrey 0)";
@@ -42,14 +42,9 @@ function darkMode () {
         document.getElementById("progress5").style.background = "conic-gradient(#31c6f7 var(--p),lightgrey 0)";
         document.getElementById("progress6").style.background = "conic-gradient(#31c6f7 var(--p),lightgrey 0)";
         document.getElementById("progress7").style.background = "conic-gradient(#31c6f7 var(--p),lightgrey 0)";
-        document.getElementById("person").src = "img/person.png";
-        document.getElementById("person2").src = "img/person2.png"; // Bytte bildene på nettsiden
         document.getElementById("swap").src = "img/moon-regular.svg";
-        console.log("blå") // Sender om det er blå/rød modus i konsollen
-        red = false;
-    } else if (red == false){
-        document.getElementById("person").src = "img/devil.png";
-        document.getElementById("person2").src = "img/devil2.png";
+        dark_mode = false;
+    } else if (dark_mode == false){
         document.getElementById("swap").src = "img/sun-regular.svg";
         document.getElementById("progress").style.background = "conic-gradient(#ff0000de var(--p),lightgrey 0)";
         document.getElementById("progress1").style.background = "conic-gradient(#ff0000de var(--p),lightgrey 0)";
@@ -59,7 +54,6 @@ function darkMode () {
         document.getElementById("progress5").style.background = "conic-gradient(#ff0000de var(--p),lightgrey 0)";
         document.getElementById("progress6").style.background = "conic-gradient(#ff0000de var(--p),lightgrey 0)";
         document.getElementById("progress7").style.background = "conic-gradient(#ff0000de var(--p),lightgrey 0)";
-        console.log("rød")
-        red = true;
+        dark_mode = true;
     }
 }
